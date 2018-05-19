@@ -49,8 +49,8 @@ Parse.Cloud.define('quick-booking', function(req, res) {
   var query = new Parse.Query(ArtistObject);
 
   query.equalTo("coordinates", req.params.coordinates);
-
-  query.limit(5);
+  res.success(query);
+/*  query.limit(5);
 
   query.find({
     success: function(results) {
@@ -60,7 +60,7 @@ Parse.Cloud.define('quick-booking', function(req, res) {
     error: function(error) {
       res.error({result: "something went wrong"});
     }
-  });
+  }); */
 });
 
 Parse.Cloud.afterSave("Booking", function(request) {
